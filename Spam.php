@@ -32,23 +32,31 @@ class Spam extends Base
     {
         //Argument Test
         Argument::i()
-            //Argument 1 must be a string or null
-            ->test(1, 'string', 'null')
-            //Argument 2 must be a string or null       
+            //Argument 1 must be a string or null or int
+            ->test(1, 'string', 'null', 'int')
+            //Argument 2 must be a string or null
             ->test(2, 'string', 'null');
-        
+
         //if it is not empty
         if(!is_null($id)) {
             //lets put it in query
-            $this->query['user_id'] = $id;
+            if(is_int($id)) {
+                $this->query['user_id'] = $id;
+            } else {
+                $this->query['screen_name'] = $id;
+            }
+
         }
-        
+
         //if it is not empty
         if(!is_null($name)) {
             //lets put it in query
             $this->query['screen_name'] = $name;
         }
-        
+
+        print_r($this->query);
+        // exit;
+
         return $this->post(self::URL_REPORT_SPAM, $this->query);
     }
 }
