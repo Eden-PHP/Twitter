@@ -101,7 +101,7 @@ class Streaming extends Base
      * @param integer
      * @return this
      */
-    public function steamWithReplies()
+    public function streamWithReplies()
     {
         $this->query['replies'] = 'all';
 
