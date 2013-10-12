@@ -20,7 +20,7 @@ class Suggestions extends Base
 {
     const URL_GET_CATEGORY = 'https://api.twitter.com/1.1/users/suggestions/%s.json';
     const URL_FAVORITES = 'https://api.twitter.com/1.1/favorites/list.json';
-    const URL_SUGGESTIONS = 'https://api.twitter.com/1/users/suggestions/%s/members.json';
+    const URL_SUGGESTIONS = 'https://api.twitter.com/1.1/users/suggestions/%s/members.json';
 
     /**
      * Access the users in a given category of the
