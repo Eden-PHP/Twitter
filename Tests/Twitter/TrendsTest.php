@@ -10,15 +10,15 @@ class Eden_Twitter_Tests_Twitter_TrendsTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->consumerKey = 'OanO9yIXRLPeNtjiywdHow';
-        $this->consumerSecret = 'vyOvpmTNH2GCcdATJV6J0n1iT53uPYy3cgDNsgBPydY';
+        $this->consumerKey = '';
+        $this->consumerSecret = '';
 
-        $this->accessToken = '21862667-Prmb3MOGBqFhqtjf2AlHDcq8MwdSocE4t2i1k3DBB';
-        $this->accessSecret = 'jTAEUuy9cSinM5UdAeh345RCjoy0dA7JtYsqzBj9M0';
+        $this->accessToken = '';
+        $this->accessSecret = '';
 
-        $this->id = '1';
-        $this->lat = '37.781157';
-        $this->long = '-122.400612831116';
+        $this->id = '';
+        $this->lat = '';
+        $this->long = '';
     }
 
     public function testGetPlaceTrending()
