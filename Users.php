@@ -112,7 +112,7 @@ class Users extends Base
 
         $this->query['image'] = $image;
 
-        return $this->upload(self::URL_UPDATE_BACKGROUND, $this->query);
+        return $this->upload(self::URL_USERS_UPDATE_BACKGROUND, $this->query);
     }
 
     /**
@@ -263,11 +263,17 @@ class Users extends Base
             ->test(1,'string', 'null')      //Argument 1 must be a string or null
             ->test(2,'string', 'null');     //Argument 2 must be a string or null
 
-        if($this->id) {
-            $this->query['user_id'] = $id;
+        if(!is_null($id)) {
+            if(is_int($id)) {
+                $this->query['user_id'] = $id;
+            }
+
+            if(!is_int($id)) {
+                $this->query['screen_name'] = $id;
+            }
         }
 
-        if($this->name) {
+        if(!is_null($name)) {
             $this->query['screen_name'] = $name;
         }
 
@@ -289,11 +295,17 @@ class Users extends Base
             ->test(1,'string', 'null')      //Argument 1 must be a string or null
             ->test(2,'string', 'null');     //Argument 2 must be a string or null
 
-        if($this->id) {
-            $this->query['user_id'] = $id;
+        if(!is_null($id)) {
+            if(is_int($id)) {
+                $this->query['user_id'] = $id;
+            }
+
+            if(!is_int($id)) {
+                $this->query['screen_name'] = $id;
+            }
         }
 
-        if($this->name) {
+        if(!is_null($name)) {
             $this->query['screen_name'] = $name;
         }
 
