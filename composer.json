@@ -1,0 +1,24 @@
+{
+    name": "eden/twitter",
+    "type": "library",
+    "description": "Eden - Twitter API",
+    "keywords": ["eden", "library"],
+    "homepage": "http://eden-php.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Maglayon",
+            "email": "rmaglayon@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1",
+        "eden/core": "1.*",
+        "eden/curl": "1.*",
+        "eden/oauth": "1.*"
+    },
+    "autoload": {
+         "psr-0": { "Eden\\Twitter\\": "" }
+    },
+    "target-dir": "Eden/Twitter"
+}
