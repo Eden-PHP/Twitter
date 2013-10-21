@@ -1,5 +1,5 @@
 {
-    name": "eden/twitter",
+    "name": "eden/twitter",
     "type": "library",
     "description": "Eden - Twitter API",
     "keywords": ["eden", "library"],
