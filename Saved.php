@@ -22,6 +22,7 @@ class Saved extends Base
     const URL_GET_DETAIL = 'https://api.twitter.com/1.1/saved_searches/show/%d.json';
     const URL_CREATE_SEARCH = 'https://api.twitter.com/1.1/saved_searches/create.json';
     const URL_REMOVE = 'https://api.twitter.com/1.1/saved_searches/destroy/%d.json';
+
     /**
      * Create a new saved search for the authenticated user.
      * A user may only have 25 saved searches.
@@ -32,16 +33,16 @@ class Saved extends Base
     public function createSearch($query)
     {
         //Argument 1 must be a integer
-        Argument::i()->test(1, 'string');   
-        
+        Argument::i()->test(1, 'string');
+
         $this->query['query'] = $query;
-        
+
         return $this->post(self::URL_CREATE_SEARCH, $this->query);
     }
-    
+
     /**
-     * Retrieve the information for the saved search represented 
-     * by the given id. The authenticating user must be the 
+     * Retrieve the information for the saved search represented
+     * by the given id. The authenticating user must be the
      * owner of saved search ID being requested.
      *
      * @param int
@@ -50,13 +51,13 @@ class Saved extends Base
     public function getDetail($id)
     {
         //Argument 1 must be a integer
-        Argument::i()->test(1, 'int');  
-        
+        Argument::i()->test(1, 'int');
+
         return $this->getResponse(sprintf(self::URL_GET_DETAIL, $id));
     }
-    
+
     /**
-     * Returns the authenticated user's 
+     * Returns the authenticated user's
      * saved search queries.
      *
      * @return array
@@ -65,10 +66,10 @@ class Saved extends Base
     {
         return $this->getResponse(self::URL_SAVED_SEARCHES);
     }
-    
+
     /**
      * Destroys a saved search for the authenticating user.
-     * The authenticating user must be the owner of 
+     * The authenticating user must be the owner of
      * saved search id being destroyed.
      *
      * @param int
@@ -77,8 +78,8 @@ class Saved extends Base
     public function remove($id)
     {
         //Argument 1 must be a integer
-        Argument::i()->test(1, 'int');  
-        
+        Argument::i()->test(1, 'int');
+
         return $this->post(sprintf(self::URL_REMOVE, $id));
     }
 }

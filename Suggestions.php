@@ -69,7 +69,6 @@ class Suggestions extends Base
         if(is_string($id)) {
             //lets put it in our query
             $this->query['screen_name'] = $id;
-
         }
 
         return $this->getResponse(self::URL_FAVORITES, $this->query);

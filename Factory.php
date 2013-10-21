@@ -25,7 +25,6 @@ use Eden\Core\Base as CoreBase;
  */
 class Factory extends CoreBase
 {
-
     const INSTANCE = 1;
 
     /**

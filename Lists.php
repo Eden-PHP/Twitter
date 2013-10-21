@@ -36,7 +36,6 @@ class Lists extends Base
     const URL_SHOW = 'https://api.twitter.com/1.1/lists/show.json';
     const URL_GET_SUBSCRITION = 'https://api.twitter.com/1.1/lists/subscriptions.json';
 
-
     /**
      * Add a member to a list. The authenticated user
      * must own the list to be able to add members

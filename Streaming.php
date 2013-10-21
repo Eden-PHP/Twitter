@@ -24,7 +24,6 @@ class Streaming extends Base
     const URL_STREAM_USER_MESSAGE = 'https://userstream.twitter.com/1.1/user.json';
     const URL_STREAM_SITE = 'https://sitestream.twitter.com/1.1/site.json';
 
-
     /**
      * Returns public statuses that match one or more filter predicates
      *

@@ -18,8 +18,8 @@ namespace Eden\Twitter;
  */
 class Search extends Base
 {
-    const URL_SEARCH_TWEETS = 'https://api.twitter.com/1.1/search/tweets.json'; 
-        
+    const URL_SEARCH_TWEETS = 'https://api.twitter.com/1.1/search/tweets.json';
+
     /**
      * Returns a collection of relevant Tweets matching a specified query.
      *
@@ -30,12 +30,12 @@ class Search extends Base
     {
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
-        
+
         $this->query['q'] = $query;
-        
+
         return $this->getResponse(self::URL_SEARCH_TWEETS, $this->query);
     }
-    
+
     /**
      * Set callback
      *
@@ -47,10 +47,10 @@ class Search extends Base
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
         $this->query['callback'] = $callback;
-        
+
         return $this;
     }
-    
+
     /**
      * Set include entites
      *
@@ -59,10 +59,10 @@ class Search extends Base
     public function includeEntities()
     {
         $this->query['include_entities'] = true;
-        
+
         return $this;
     }
-    
+
     /**
      * Set geocode
      *
@@ -74,10 +74,10 @@ class Search extends Base
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
         $this->query['geocode'] = $geocode;
-        
+
         return $this;
     }
-    
+
     /**
      * Restricts tweets to the given language, given by an ISO 639-1 code.
      *
@@ -89,12 +89,12 @@ class Search extends Base
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
         $this->query['lang'] = $language;
-        
+
         return $this;
     }
-    
+
     /**
-     * Specify the language of the query you are sending (only ja is currently effective). 
+     * Specify the language of the query you are sending (only ja is currently effective).
      * This is intended for language-specific clients and the default should work in the
      * majority of cases.
      *
@@ -106,12 +106,12 @@ class Search extends Base
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
         $this->query['locale'] = $locale;
-        
+
         return $this;
     }
-    
+
     /**
-     * The page number (starting at 1) to return, up to a max of roughly 1500 results 
+     * The page number (starting at 1) to return, up to a max of roughly 1500 results
      *
      * @param integer
      * @return this
@@ -121,10 +121,10 @@ class Search extends Base
         //Argument 1 must be an integer
         Argument::i()->test(1, 'int');
         $this->query['page'] = $page;
-        
+
         return $this;
     }
-    
+
     /**
      * Set mixed result
      *
@@ -133,10 +133,10 @@ class Search extends Base
     public function setMixedResultType()
     {
         $this->query['result_type'] = 'mixed';
-        
+
         return $this;
     }
-    
+
     /**
      * Set recent result
      *
@@ -145,10 +145,10 @@ class Search extends Base
     public function setRecentResultType()
     {
         $this->query['result_type'] = 'recent';
-        
+
         return $this;
     }
-    
+
     /**
      * Set populat result
      *
@@ -157,32 +157,32 @@ class Search extends Base
     public function setPopularResultType()
     {
         $this->query['result_type'] = 'popular';
-        
+
         return $this;
     }
-    
+
     /**
      * The number of tweets to return per page, up to a max of 100.
      *
-     * @param int 
+     * @param int
      * @return this
      */
     public function setRpp($rpp)
     {
         //Argument 1 must be a string
         Argument::i()->test(1, 'string');
-        
+
         //if it is greater than 100
         if($rpp > 100) {
             //set it to 100
             $rpp = 100;
         }
-        
+
         $this->query['rpp'] = $rpp;
-        
+
         return $this;
     }
-    
+
     /**
      * Set since id
      *
@@ -194,10 +194,10 @@ class Search extends Base
         //Argument 1 must be a string
         Argument::i()->test(1, 'int');
         $this->query['since_id'] = $sinceId;
-        
+
         return $this;
     }
-    
+
     /**
      * Set show user
      *
@@ -206,10 +206,10 @@ class Search extends Base
     public function showUser()
     {
         $this->query['show_user'] = true;
-        
+
         return $this;
     }
-    
+
     /**
      * Returns tweets generated before the given date.
      *
@@ -220,18 +220,17 @@ class Search extends Base
     {
         //Argument 1 must be a string
         Argument::i()->test(1, 'string', 'int');
-        
+
         //if it is a string
         if(is_string($until)) {
             //make it a integer date
             $until = strtotime($until);
         }
-        
+
         //format date
         $until = date('Y-m-d', $until);
         $this->query['until'] = $until;
-        
+
         return $this;
     }
-     
 }

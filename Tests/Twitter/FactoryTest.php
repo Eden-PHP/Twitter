@@ -11,20 +11,20 @@ class Eden_Twitter_Tests_Twitter_FactoryTest extends \PHPUnit_Framework_TestCase
 {
 
     public function setUp() {
-        $this->key = 'QwgkQh3AiloLxQ9PcjqNgA';
-        $this->secret = 'LNOxfFGIWTzlKSpL23qY28kxLxfwfKBDW3vh1BSw4M';
+        $this->key = '';
+        $this->secret = '';
 
-        $this->consumerKey = 'QwgkQh3AiloLxQ9PcjqNgA';
-        $this->consumerSecret = 'LNOxfFGIWTzlKSpL23qY28kxLxfwfKBDW3vh1BSw4M';
+        $this->consumerKey = '';
+        $this->consumerSecret = '';
 
-        $this->accessToken = '21862667-Prmb3MOGBqFhqtjf2AlHDcq8MwdSocE4t2i1k3DBB';
-        $this->accessSecret = 'jTAEUuy9cSinM5UdAeh345RCjoy0dA7JtYsqzBj9M0';
+        $this->accessToken = '';
+        $this->accessSecret = '';
     }
 
     public function testAuth()
     {
-        // $class = eden('twitter')->auth($this->key, $this->secret);
-        // $this->assertInstanceOf('Eden\\Twitter\\Oauth', $class);
+        $class = eden('twitter')->auth($this->key, $this->secret);
+        $this->assertInstanceOf('Eden\\Twitter\\Oauth', $class);
     }
 
     public function testDirectMessage()

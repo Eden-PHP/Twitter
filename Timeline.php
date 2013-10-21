@@ -68,7 +68,6 @@ class Timeline extends Base
      */
     public function getYourTimeLine()
     {
-
         return $this->getResponse(self::URL_TIMELINES_MENTION, $this->query);
     }
 

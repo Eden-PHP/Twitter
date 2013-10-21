@@ -45,7 +45,6 @@ class Spam extends Base
             } else {
                 $this->query['screen_name'] = $id;
             }
-
         }
 
         //if it is not empty
@@ -53,9 +52,6 @@ class Spam extends Base
             //lets put it in query
             $this->query['screen_name'] = $name;
         }
-
-        print_r($this->query);
-        // exit;
 
         return $this->post(self::URL_REPORT_SPAM, $this->query);
     }

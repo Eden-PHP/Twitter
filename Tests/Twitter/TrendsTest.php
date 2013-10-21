@@ -16,7 +16,7 @@ class Eden_Twitter_Tests_Twitter_TrendsTest extends \PHPUnit_Framework_TestCase
         $this->accessToken = '';
         $this->accessSecret = '';
 
-        $this->id = '';
+        $this->id = '1';
         $this->lat = '';
         $this->long = '';
     }

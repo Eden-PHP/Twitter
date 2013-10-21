@@ -24,10 +24,9 @@ class Help extends Base
     const URL_TOS           = 'https://api.twitter.com/1.1/help/tos.json';
     const URL_RATE_LIMIT    = 'https://api.twitter.com/1.1/application/rate_limit_status.json';
 
-
     /**
-     * Returns the current configuration used by 
-     * Twitter including twitter.com slugs which 
+     * Returns the current configuration used by
+     * Twitter including twitter.com slugs which
      * are not usernames, maximum photo resolutions,
      * and t.co URL lengths.
      *
@@ -37,9 +36,9 @@ class Help extends Base
     {
         return $this->getResponse(self::URL_CONFIGURATION);
     }
-    
+
     /**
-     * Returns the Twitter Terms of Service in the requested format. 
+     * Returns the Twitter Terms of Service in the requested format.
      * These are not the same as the Developer Rules of the Road.
      *
      * @return array
@@ -48,7 +47,7 @@ class Help extends Base
     {
         return $this->getResponse(self::URL_LANGUAGES);
     }
-    
+
     /**
      * Returns Twitter's Privacy Policy.
      *
@@ -58,7 +57,7 @@ class Help extends Base
     {
         return $this->getResponse(self::URL_PRIVACY);
     }
-    
+
     /**
      * Returns Twitter's Privacy Policy.
      *
@@ -77,9 +76,9 @@ class Help extends Base
     {
         //Argument 1 must be a string or null
         Argument::i()->test(1, 'string', 'null');
-        
+
         $this->query['resources'] = $resources;
-        
+
         return $this->getResponse(self::URL_RATE_LIMIT, $this->query);
     }
 }

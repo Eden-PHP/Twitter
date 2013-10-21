@@ -7,93 +7,93 @@
  * distributed with this package.
  */
 
-// class Eden_Twitter_Tests_Twitter_FavoritesTest extends \PHPUnit_Framework_TestCase
-// {
-//     public function setUp()
-//     {
-//         $this->consumerKey = 'QwgkQh3AiloLxQ9PcjqNgA';
-//         $this->consumerSecret = 'LNOxfFGIWTzlKSpL23qY28kxLxfwfKBDW3vh1BSw4M';
+class Eden_Twitter_Tests_Twitter_FavoritesTest extends \PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->consumerKey = '';
+        $this->consumerSecret = '';
 
-//         $this->accessToken = '21862667-Prmb3MOGBqFhqtjf2AlHDcq8MwdSocE4t2i1k3DBB';
-//         $this->accessSecret = 'jTAEUuy9cSinM5UdAeh345RCjoy0dA7JtYsqzBj9M0';
+        $this->accessToken = '';
+        $this->accessSecret = '';
 
-//         $this->id = '243138128959913986';
-//         $this->count = '1';
-//         $this->sinceId = '384627494474616832';
-//         $this->maxId = '384627494474616832';
-//         $this->page = '1';
-//     }
+        $this->id = '';
+        $this->count = '1';
+        $this->sinceId = '';
+        $this->maxId = '';
+        $this->page = '1';
+    }
 
-//     public function testAddFavorites()
-//     {
-//         $favorites = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->addFavorites($this->id);
-//         $this->assertArrayHasKey('user', $favorites);
-//     }
+    public function testAddFavorites()
+    {
+        $favorites = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->addFavorites($this->id);
+        $this->assertArrayHasKey('user', $favorites);
+    }
 
-//     public function testGetList()
-//     {
-//         $list = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->getList();
-//         $this->assertArrayHasKey('user', $list[0]);
-//     }
+    public function testGetList()
+    {
+        $list = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->getList();
+        $this->assertArrayHasKey('user', $list[0]);
+    }
 
-//     public function testRemove()
-//     {
-//         $remove = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->remove($this->id);
-//         $this->assertArrayHasKey('id', $remove);
-//     }
+    public function testRemove()
+    {
+        $remove = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->remove($this->id);
+        $this->assertArrayHasKey('id', $remove);
+    }
 
-//     public function testSetUserId()
-//     {
-//         $userId = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->setUserId($this->id);
+    public function testSetUserId()
+    {
+        $userId = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->setUserId($this->id);
 
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $userId);
-//     }
+        $this->assertObjectHasAttribute('query', $userId);
+    }
 
-//     public function testSetCount()
-//     {
-//         $count = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->setCount($this->count);
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $count);
-//     }
+    public function testSetCount()
+    {
+        $count = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->setCount($this->count);
+        $this->assertObjectHasAttribute('query', $count);
+    }
 
-//     public function testSetSinceId()
-//     {
-//         $since = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->setSinceId($this->sinceId);
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $since);
-//     }
+    public function testSetSinceId()
+    {
+        $since = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->setSinceId($this->sinceId);
+        $this->assertObjectHasAttribute('query', $since
+    }
 
-//     public function testSetMaxId()
-//     {
-//         $max = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->setMaxId($this->maxId);
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $max);
-//     }
+    public function testSetMaxId()
+    {
+        $max = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->setMaxId($this->maxId);
+        $this->assertObjectHasAttribute('query', $max);
+    }
 
-//     public function testSetPage()
-//     {
-//         $page = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->setPage($this->page);
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $page);
-//     }
+    public function testSetPage()
+    {
+        $page = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->setPage($this->page);
+        $this->assertObjectHasAttribute('query', $page);
+    }
 
-//     public function testIncludeEntities()
-//     {
-//         $entities = eden('twitter')
-//             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
-//             ->includeEntities($this->count);
-//         $this->assertInstanceOf('Eden\\Twitter\\Favorites', $entities);
-//     }
-// }
+    public function testIncludeEntities()
+    {
+        $entities = eden('twitter')
+            ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
+            ->includeEntities($this->count);
+        $this->assertObjectHasAttribute('query', $entities);
+    }
+}

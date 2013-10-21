@@ -10,8 +10,8 @@
 class Eden_Twitter_Tests_Twitter_DirectmessageTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp() {
-        $this->consumerKey = 'OanO9yIXRLPeNtjiywdHow';
-        $this->consumerSecret = 'vyOvpmTNH2GCcdATJV6J0n1iT53uPYy3cgDNsgBPydY';
+        $this->consumerKey = '';
+        $this->consumerSecret = '';
 
         $this->accessToken = '';
         $this->accessSecret = '';
@@ -31,7 +31,6 @@ class Eden_Twitter_Tests_Twitter_DirectmessageTest extends \PHPUnit_Framework_Te
         $list = eden('twitter')
             ->directMessage($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
             ->getList();
-        print_r($list);
         $this->assertArrayHasKey('id', $list[0]);
     }
 

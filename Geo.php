@@ -24,7 +24,6 @@ class Geo extends Base
     const URL_GET_SIMILAR_PLACES = 'https://api.twitter.com/1.1/geo/similar_places.json';
     const URL_CREATE_PLACE = 'https://api.twitter.com/1.1/geo/place.json';
 
-
     /**
      * Creates a new place object at the given
      * latitude and longitude.

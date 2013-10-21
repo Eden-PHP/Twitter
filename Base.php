@@ -23,7 +23,6 @@ use Eden\Oauth\Oauth1\Base as Oauth1Base;
  */
 class Base extends Oauth1Base
 {
-
     protected $consumerKey = NULL;
     protected $consumerSecret = NULL;
     protected $accessToken = NULL;

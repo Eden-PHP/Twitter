@@ -35,7 +35,6 @@ class Users extends Base
     const URL_CONTRIBUTEES = 'https://api.twitter.com/1.1/users/contributees.json';
     const URL_CONTRIBUTORS = 'https://api.twitter.com/1.1/users/contributors.json';
 
-
     protected $id = NULL;
     protected $name = NULL;
     protected $size = NULL;
@@ -126,7 +125,6 @@ class Users extends Base
     public function updateProfileColor()
     {
         return $this->post(self::URL_UPDATE_PROFILE_COLOR, $this->query);
-
     }
 
     /**
@@ -381,7 +379,6 @@ class Users extends Base
         $this->query['url'] = $url;
 
         return $this;
-
     }
 
     /**
@@ -397,7 +394,6 @@ class Users extends Base
         $this->query['description'] = $description;
 
         return $this;
-
     }
 
     /**
@@ -413,7 +409,6 @@ class Users extends Base
         $this->query['location'] = $location;
 
         return $this;
-
     }
 
     /**

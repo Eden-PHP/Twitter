@@ -25,7 +25,6 @@ use Eden\Core\Argument as CoreArgument;
  */
 class Argument extends CoreArgument
 {
-
     /**
      * Validates an argument given the type.
      *
@@ -49,5 +48,4 @@ class Argument extends CoreArgument
 
         return parent::isValid($type, $data);
     }
-
 }

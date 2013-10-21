@@ -23,6 +23,7 @@ class Oauth extends Base
     const REQUEST_URL = 'https://api.twitter.com/oauth/request_token';
     const AUTHORIZE_URL = 'https://api.twitter.com/oauth/authorize';
     const ACCESS_URL = 'https://api.twitter.com/oauth/access_token';
+
     protected $key = NULL;
     protected $secret   = NULL;
 

@@ -158,7 +158,6 @@ class Eden_Twitter_Tests_Twitter_UsersTest extends \PHPUnit_Framework_TestCase
         $search = eden('twitter')
             ->users($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
             ->search($this->search);
-        print_r($search);
         $this->assertArrayHasKey('id', $search[0]);
     }
 
