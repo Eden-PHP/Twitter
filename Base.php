@@ -95,6 +95,12 @@ class Base extends Oauth1Base
         return (json_last_error() == JSON_ERROR_NONE);
     }
 
+    /**
+     * Gets the access keys
+     *
+     * @param array
+     * @return array
+     */
     protected function accessKey($array)
     {
         foreach($array as $key => $val) {
@@ -116,6 +122,13 @@ class Base extends Oauth1Base
         return $array;
     }
 
+    /**
+     * Gets the response
+     *
+     * @param string
+     * @param array
+     * @return array
+     */
     protected function getResponse($url, array $query = array())
     {
         //prevent sending fields with no value
@@ -145,6 +158,13 @@ class Base extends Oauth1Base
         }
     }
 
+    /**
+     * Sets up the post request
+     *
+     * @param string
+     * @param array
+     * @return array
+     */
     protected function post($url, array $query = array())
     {
         //prevent sending fields with no value
@@ -204,6 +224,13 @@ class Base extends Oauth1Base
         return $response;
     }
 
+    /**
+     * Sets up the upload request
+     *
+     * @param string
+     * @param array
+     * @return array
+     */
     protected function upload($url, array $query = array())
     {
         //prevent sending fields with no value
@@ -307,6 +334,12 @@ class Base extends Oauth1Base
         $this->headers['Authorization'] = $this->authHeader;
     }
 
+    /**
+     * Sets up the date to be safe encoded
+     *
+     * @param string
+     * @return string|null
+     */
     protected function safeEncode($data)
     {
         //if data is in array
