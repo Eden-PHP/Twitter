@@ -28,9 +28,9 @@ class Argument extends CoreArgument
     /**
      * Validates an argument given the type.
      *
-     * @param *string
-     * @param *mixed
-     * @return bool
+     * @param string
+     * @param string
+     * @return boolean
      */
     protected function isValid($type, $data)
     {
