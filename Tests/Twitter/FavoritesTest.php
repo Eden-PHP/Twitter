@@ -70,7 +70,7 @@ class Eden_Twitter_Tests_Twitter_FavoritesTest extends \PHPUnit_Framework_TestCa
         $since = eden('twitter')
             ->favorites($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessSecret)
             ->setSinceId($this->sinceId);
-        $this->assertObjectHasAttribute('query', $since
+        $this->assertObjectHasAttribute('query', $since);
     }
 
     public function testSetMaxId()

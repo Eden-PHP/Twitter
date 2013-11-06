@@ -9,7 +9,7 @@
 
 namespace Eden\Twitter;
 
-use Eden/Core/Exception as CoreException;
+use Eden\Core\Exception as CoreException;
 
 /**
  * The base class for any class handling exceptions. Exceptions
