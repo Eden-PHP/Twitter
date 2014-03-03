@@ -307,7 +307,7 @@ class Friends extends Base
         //else it is string
         } else {
             //lets put it in query
-            $this->query['string_name'] = $id;
+            $this->query['screen_name'] = $id;
         }
 
         $this->query['include_user_entities'] = false;
@@ -334,7 +334,7 @@ class Friends extends Base
         //else it is string
         } else {
             //lets put it in query
-            $this->query['string_name'] = $id;
+            $this->query['screen_name'] = $id;
         }
 
         $this->query['include_user_entities'] = false;
